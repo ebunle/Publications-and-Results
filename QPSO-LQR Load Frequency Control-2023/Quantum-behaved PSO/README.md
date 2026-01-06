@@ -101,17 +101,6 @@ The hybrid optimization approach effectively combines the strengths of LQR and Q
 ---
 
 ## 5. Abbreviations
-- **2DOF:** Two-Degree-of-Freedom
-- **BELBIC:** Brain Emotional Learning-Based Intelligent Controller
-- **DG:** Distributed Generation
-- **FOPID:** Fractional Order PID
-- **ITSE:** Integral Time Square Error
-- **LFC:** Load Frequency Control
-- **LQR:** Linear Quadratic Regulator
-- **PID:** Proportional-Integral-Derivative
-- **PSO:** Particle Swarm Optimization
-- **QPSO:** Quantum Particle Swarm Optimization
-- **ZN-RL:** Ziegler–Nichols and Root Locus
 
 ---
 
