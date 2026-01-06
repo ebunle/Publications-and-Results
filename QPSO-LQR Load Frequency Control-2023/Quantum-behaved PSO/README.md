@@ -37,9 +37,7 @@ The integrated model is shown in the block diagram (Fig. 2).
 
 ### 2.2 PID Controller Design
 The PID controller is given by:
-$$
-u(t) = K_p e(t) + K_i \int e(t) dt + K_d \frac{de(t)}{dt}
-$$
+$$u(t) = K_p e(t) + K_i \int e(t) dt + K_d \frac{de(t)}{dt}$$
 The goal is to find optimal gains $$K_p, K_i, K_d$$.
 
 ### 2.3 Optimization Methods
@@ -49,17 +47,17 @@ Three tuning approaches are compared:
 3. **QPSO-Optimized LQR-PID (Proposed)**
 
 ### 2.4 Quantum Particle Swarm Optimization (QPSO)
-QPSO is a variant of PSO inspired by quantum mechanics, offering improved global search capability and convergence. It is used to optimize the LQR weighting matrices \(Q\) and \(R\), which in turn yield optimal PID gains.
+QPSO is a variant of PSO inspired by quantum mechanics, offering improved global search capability and convergence. It is used to optimize the LQR weighting matrices $$Q$$ and $$R$$, which in turn yield optimal PID gains.
 
 ---
 
 ## 3. Simulation and Results
 ### 3.1 System Parameters
 Parameters used for the isolated power plant are listed in Table 2, including:
-- Governor gain \(K_{gov} = 1\)
-- Turbine time constant \(τ_{turbine} = 0.5s\)
-- Generator inertia constant \(H = 5s\)
-- Load change \(ΔP_{load} = 0.2 p.u. (50 MW)\)
+- Governor gain $$K_{gov} = 1$$
+- Turbine time constant $$τ_{turbine} = 0.5s$$
+- Generator inertia constant %%H = 5s$$
+- Load change $$ΔP_{load} = 0.2 p.u. (50 MW)$$
 
 ### 3.2 Controller Performance Comparison
 #### (a) No Controller
@@ -68,22 +66,22 @@ Parameters used for the isolated power plant are listed in Table 2, including:
 - Settling time: > 6 s
 
 #### (b) Manual PID
-- Steady-state error: \(1.267 \times 10^{-4}\) Hz
+- Steady-state error: $$1.267 \times 10^{-4}$$ Hz
 - Overshoot: 0.2962 Hz
 - Settling time: ~10 s
 
 #### (c) ZN-RL PID
-- Steady-state error: \(7.038 \times 10^{-4}\) Hz
+- Steady-state error: $$7.038 \times 10^{-4}$$ Hz
 - Overshoot: 0.3485 Hz
 - Settling time: ~8 s
 
 #### (d) QPSO-LQR-PID (Proposed)
-- Steady-state error: \(7 \times 10^{-5}\) Hz
+- Steady-state error: $$7 \times 10^{-5}$$ Hz
 - Overshoot: 0.04521 Hz
 - Settling time: < 4 s
 
 ### 3.3 Optimal PID Gains
-| Method       | \(K_p\)       | \(K_i\)       | \(K_d\)       |
+| Method       | $$K_p$$       | $$K_i$$       | $$K_d$$       |
 |--------------|--------------|--------------|--------------|
 | Manual       | 20121        | 0.9989       | 1.0117       |
 | ZN-RL        | 2.244        | 2.3194       | 0.5428       |
@@ -93,7 +91,7 @@ Parameters used for the isolated power plant are listed in Table 2, including:
 
 ## 4. Conclusion
 The proposed QPSO-LQR-PID controller demonstrates superior performance in load frequency control for an isolated power system. It achieves:
-- Minimal steady-state error (\(7 \times 10^{-5}\) Hz)
+- Minimal steady-state error $$(7 \times 10^{-5}$$ Hz)
 - Reduced overshoot (0.04521 Hz)
 - Faster settling time (< 4 s)
 - Robustness to load changes and parameter uncertainties
