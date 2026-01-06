@@ -84,7 +84,7 @@ Parameters used for the isolated power plant are listed in Table 2, including:
 ### 3.3 Optimal PID Gains
 | Method       | $$K_p$$       | $$K_i$$       | $$K_d$$       |
 |--------------|--------------|--------------|--------------|
-| Manual       | 20121        | 0.9989       | 1.0117       |
+| Manual       | 2.0121        | 0.9989       | 1.0117       |
 | ZN-RL        | 2.244        | 2.3194       | 0.5428       |
 | QPSO-LQR-PID | 79.0763      | 282.0301     | 43.7655      |
 
