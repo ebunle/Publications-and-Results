@@ -67,7 +67,7 @@ A statistical analysis over 10 algorithm executions showed:
 - **PSO** showed better robustness according to kurtosis and skewness tests, with less deviation from a normal distribution.
 
 ## 4. Conclusion
-The study presents a synergistic comparison of PSO and DE for optimizing a hybrid hydro-PV-battery system. The model successfully identified a cost-effective and reliable system configuration for off-grid use. Key conclusions are:
+The study presents a comparison of PSO and DE for optimizing a hybrid hydro-PV-battery system. The model successfully identified a cost-effective and reliable system configuration for off-grid use. Key conclusions are:
 - Hydropower's cost-competitiveness leads it to dominate the optimal hybrid mix, significantly reducing the LCOE.
 - The synchronized operation of hydropower and solar PV can potentially eliminate the need for expensive battery storage in suitable locations.
 - **DE proved better in terms of convergence speed and cost-effectiveness**, while **PSO offered slightly better system reliability and statistical robustness**.
@@ -76,16 +76,7 @@ The study presents a synergistic comparison of PSO and DE for optimizing a hybri
 ---
 
 ## Abbreviations
-**AI:** Artificial Intelligence  
-**DE:** Differential Evolution  
-**LCOE:** Levelized Cost of Energy  
-**LPSP:** Loss of Power Supply Probability  
-**NPC:** Net Present Cost  
-**O&M:** Operation and Maintenance  
-**PSO:** Particle Swarm Optimization  
-**PV:** Photovoltaic  
-**RE:** Renewable Energy  
-**SOC:** State of Charge  
+
 
 ---
 
