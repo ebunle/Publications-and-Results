@@ -52,7 +52,7 @@ QPSO is a variant of PSO inspired by quantum mechanics, offering improved global
 ---
 
 ## 3. Simulation and Results 
-<!--
+
 ### 3.1 System Parameters
 Parameters used for the isolated power plant are listed in Table 2, including:
 - Governor gain $$K_{gov} = 1$$
@@ -100,7 +100,7 @@ The proposed QPSO-LQR-PID controller demonstrates superior performance in load f
 The hybrid optimization approach effectively combines the strengths of LQR and QPSO, providing a clear and efficient design process compared to conventional methods.
 
 ---
--->
+
 ## 5. Abbreviations
 
 ---
