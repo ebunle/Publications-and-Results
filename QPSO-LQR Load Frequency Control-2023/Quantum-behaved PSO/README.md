@@ -2,8 +2,6 @@
 
 **Authors:**  
 Ebunle Akupan René¹, Willy Stephen Tounsi Fokui²  
-¹Catholic University of Central Africa (UCAC-ICAM), Cameroon  
-²Teleconnect GmbH, Germany  
 
 **Corresponding Author:** ebunleakupanrene@gmail.com  
 
@@ -39,10 +37,10 @@ The integrated model is shown in the block diagram (Fig. 2).
 
 ### 2.2 PID Controller Design
 The PID controller is given by:
-\[
+$$
 u(t) = K_p e(t) + K_i \int e(t) dt + K_d \frac{de(t)}{dt}
-\]
-The goal is to find optimal gains \(K_p, K_i, K_d\).
+$$
+The goal is to find optimal gains $$K_p, K_i, K_d$$.
 
 ### 2.3 Optimization Methods
 Three tuning approaches are compared:
