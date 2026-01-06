@@ -1,102 +1,94 @@
-# Artificial Intelligence-Based Optimal EVCS Integration with Stochastically Sized and Distributed PVs in an RDNS Segmented in Zones
+# Control and optimization of a hybrid solar PV – Hydro power system for off-grid applications using particle swarm optimization (PSO) and differential evolution (DE)
 
 **Authors:**  
-Ebunle Akupan René¹, Willy Stephen Tounsi Fokui²  
+Chu Donatus Iweh¹,², Ebunle Rene Akupan²  
 
-**Corresponding Author:** ebunleakupanrene@gmail.com  
+**Corresponding Author:** iwehdona@gmail.com  
 
-**Published in:** *Journal of Electrical Systems and Information Technology* (2024)  
-**DOI:** [https://doi.org/10.1186/s43067-023-00126-w](https://doi.org/10.1186/s43067-023-00126-w)  
+**Published in:** *Energy Reports* 10 (2023) 4253–4270  
+**DOI:** [https://doi.org/10.1016/j.egyr.2023.10.080](https://doi.org/10.1016/j.egyr.2023.10.080)  
 
 ---
 
 ## Abstract
-The growing interest in electric vehicles (EVs) for transportation has led to increased production and government support through legislation, offering environmental benefits such as reduced air pollution and carbon emissions. This study proposes a novel strategy for maximizing EV utilization through EV charging stations (EVCSs) in a radial distribution network system (RDNS) by considering factors such as load voltage deviation, line losses, and the presence of distributed solar photovoltaic systems at load centers.
+The use of artificial intelligence (AI)–based tools in the optimization of renewable energy (RE) systems is increasing. This paper uses AI-based Particle Swarm Optimization (PSO) and Differential Evolution (DE) for the design and optimization of a stand-alone hybrid solar PV – hydro–battery power system for off-grid rural electrification in Cameroon. The proposed smart algorithms ensure that the load is met at a minimum levelized cost of energy (LCOE) and acceptable loss of power supply probability (LPSP).
 
-The research begins by segmenting the RDNS into zones, followed by the application of an artificial intelligence-based hybrid genetic algorithm (GA) and particle swarm optimization (PSO) approach known as hybrid GA–PSO. This approach identifies optimal locations for EVCSs integrated with photovoltaics within the network. Simulations using the IEEE 33-node test feeder validate the proposed techniques, demonstrating the effectiveness of the hybrid GA–PSO algorithm in identifying optimal EVCS placement within each zone.
+After simulation, DE gave an optimum LPSP of **0.0499** and optimum LCOE of **0.06192 $/kWh** after the 19th iteration under set operational limits while PSO gave an optimum LPSP of **0.0492** and optimum LCOE of **0.06358 $/kWh** after the 40th iteration. The optimal net present cost (NPC) obtained from the PSO and DE were **USD $96,175.26** and **USD $93,958.07** respectively. While DE gave a lesser LCOE than PSO, the LPSP obtained using the PSO technique was smaller, signifying more system reliability. The optimum system size of DE showed the least LCOE with the proposed capacities of **1 kW PV, 33.96 kW hydropower and zero battery**. An appraisal of the two algorithms showed that the DE tool is accurate and a better option than PSO in terms of cost and speed of convergence. Further statistical analysis revealed that PSO was more robust. The optimal cost function obtained from both algorithms is acceptable for rural electrification projects.
 
 **Keywords:**  
-Charging station, Electric vehicle, Photovoltaic, Zones, Artificial intelligence, Genetic algorithm, Optimization techniques, Particle swarm optimization, Power losses, Voltage stability margin
+MATLAB, LCOE, LPSP, Smart algorithm, Artificial intelligence, Rural Electrification, Cameroon, System Reliability, Cost Function
 
 ---
 
 ## 1. Introduction
-The shift toward EV technology aligns with the goal of preserving the natural environment. However, effective management of the power grid is crucial, particularly in radial distribution network systems (RDNS) as they pose stress and deviation of power system parameters from their normal. This study introduces a novel strategy for the optimal placement of EVCSs and distributed PV systems in an RDNS, leveraging AI-based optimization techniques.
-
----
+As countries commit to decreasing their dependence on polluting fossil fuels, clean energy penetration has greatly risen. This study focuses on optimizing a hybrid solar PV-hydropower-battery system for off-grid applications in Cameroon, leveraging the country's abundant RE resources to address its low rural electrification rate.
 
 ## 2. Methodology
-### 2.1 Distribution Network Modeling
-- The IEEE 33-bus system is used as the test network.
-- The RDNS is segmented into zones using improved spectral clustering.
-- Each zone is allocated an EVCS with charging points based on estimated EV demand.
+### 2.1 System Components Modeling
+- **Hydro System:** Power output modeled as a function of water flow rate, net head, and turbine-generator efficiency.
+- **PV System:** Output power modeled considering solar irradiance, cell temperature, and module efficiency.
+- **Battery Bank:** Modeled for energy storage with state-of-charge (SOC) constraints and round-trip efficiency.
+- **Inverter:** Sized based on peak load demand and efficiency.
 
-### 2.2 Modeling of EVs and Chargers
-- EV penetration is set to 30%.
-- Five EV models with Level 1 (11 kW) and Level 2 (22 kW) chargers are considered.
-- Reactive power compensation is modeled with a power factor of 0.90.
+### 2.2 System Configuration and Control Strategy
+The hybrid system integrates solar PV and batteries on a DC bus, with the hydro system and load connected to an AC bus via a bidirectional converter. A rule-based control strategy manages energy flow:
+1.  Power balance between generation and load.
+2.  Battery charging during excess generation.
+3.  Battery discharging or load shedding during power deficit.
+4.  Power curtailment to dump loads if the battery is full.
 
-### 2.3 Modeling of Distributed PV Systems
-- PV penetration is set to 35%.
-- PV systems are modeled as negative loads with reactive power injection capability.
-- PV modules are randomly sized and distributed across the network.
+### 2.3 Problem Formulation
+A multi-objective optimization aims to minimize:
+1.  **Levelized Cost of Energy (LCOE)**
+2.  **Loss of Power Supply Probability (LPSP)**
 
-### 2.4 Problem Formulation
-The optimization aims to minimize:
-1. **Real and reactive power losses**
-2. **Voltage deviation index (VDI)**
+**Objective Function:**
+Two objectives were minimized simultaneously to ensure affordability and reliability.
 
-**Objective function:**
-\[
-J^* = \beta_1 \cdot J_1^* + \beta_2 \cdot J_2^*
-\]
-where \(J_1^*\) is total power loss and \(J_2^*\) is VDI.
+**Constraints:** Included water flow limits, battery SOC bounds, power output limits for each component, and system power balance.
 
-### 2.5 Optimization Algorithms
-Three optimization techniques are compared:
-1. **Particle Swarm Optimization (PSO)**
-2. **Genetic Algorithm (GA)**
-3. **Hybrid GA–PSO**
-
----
+### 2.4 Optimization Algorithms
+Two AI-based metaheuristic algorithms were implemented in MATLAB:
+1.  **Particle Swarm Optimization (PSO):** A population-based stochastic optimizer.
+2.  **Differential Evolution (DE):** A vector-based evolutionary algorithm.
 
 ## 3. Simulation and Results
-### 3.1 Optimal EVCS and PV Placement
-- The hybrid GA–PSO algorithm identified optimal EVCS locations in each zone.
-- Four execution cases with randomly sized and placed PV systems were analyzed.
+### 3.1 Case Study
+The algorithms were applied to size a system for Matondo, an off-grid farming community in Cameroon. Hourly data for one year (solar irradiance, temperature, river flow, and load) were used.
 
-### 3.2 Voltage Profile Improvement
-- The hybrid GA–PSO achieved the best voltage profile with a minimum node voltage of **0.92214 p.u.**, better than GA (0.89494 p.u.) and PSO (0.90792 p.u.).
+### 3.2 Optimal Solution
+- **DE** converged faster (19th iteration) with a lower LCOE (**0.06192 $/kWh**) and higher LPSP (0.0499).
+- **PSO** converged later (40th iteration) with a slightly higher LCOE (**0.06358 $/kWh**) but a better (lower) LPSP (**0.0492**), indicating higher reliability.
+- The optimal configuration for both algorithms comprised a **dominant hydropower component (~34 kW), a minimal PV component (~1 kW), and no battery bank**, highlighting the cost-competitiveness and dispatchability of hydro.
 
-### 3.3 Power Loss Reduction
-- The hybrid GA–PSO yielded the lowest power losses:
-  - Real power loss: **192.4145 kW**
-  - Reactive power loss: **125.3715 kVar**
-
-### 3.4 Voltage Deviation Index (VDI)
-- Hybrid GA–PSO achieved the lowest VDI: **5.4867%**, compared to GA (7.0918%) and PSO (6.1181%).
-
----
+### 3.3 Statistical Assessment
+A statistical analysis over 10 algorithm executions showed:
+- **DE** had higher efficiency (72.16%) and was more stable (consistent results).
+- **PSO** showed better robustness according to kurtosis and skewness tests, with less deviation from a normal distribution.
 
 ## 4. Conclusion
-The hybrid GA–PSO approach demonstrated superior performance in optimizing EVCS placement in an RDNS with randomly sized and distributed PV systems. It effectively minimized power losses and voltage deviation while improving voltage stability. This method provides a robust framework for integrating EV charging infrastructure into modern distribution networks.
+The study presents a comparison of PSO and DE for optimizing a hybrid hydro-PV-battery system. The model successfully identified a cost-effective and reliable system configuration for off-grid use. Key conclusions are:
+- Hydropower's cost-competitiveness leads it to dominate the optimal hybrid mix, significantly reducing the LCOE.
+- The synchronized operation of hydropower and solar PV can potentially eliminate the need for expensive battery storage in suitable locations.
+- **DE proved better in terms of convergence speed and cost-effectiveness**, while **PSO offered slightly better system reliability and statistical robustness**.
+- The proposed AI-based optimization framework provides a practical tool for designing affordable and reliable hybrid RE systems for rural electrification.
 
 ---
 
-## 5. Abbreviations
+## Abbreviations
 
 
 ---
 
-## 6. References
+## References
 See the original paper for a complete list of references.
 
 ---
 
-## 7. License
-This article is licensed under a **Creative Commons Attribution 4.0 International License**.
+## License
+This article is licensed under a **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)**.
 
 ---
 
 ## How to Cite
-René, E.A., Fokui, W.S.T. Artificial intelligence-based optimal EVCS integration with stochastically sized and distributed PVs in an RDNS segmented in zones. *J Electr Syst Inf Technol* **11**, 1 (2024). https://doi.org/10.1186/s43067-023-00126-w
+Iweh, C.D., Akupan, E.R. Control and optimization of a hybrid solar PV – Hydro power system for off-grid applications using particle swarm optimization (PSO) and differential evolution (DE). *Energy Reports* 10 (2023) 4253–4270. https://doi.org/10.1016/j.egyr.2023.10.080
