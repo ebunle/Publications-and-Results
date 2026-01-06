@@ -47,8 +47,8 @@ The optimization aims to minimize:
 2. **Voltage deviation index (VDI)**
 
 **Objective function:**
-$$J^* = \beta_1 \cdot J_1^* + \beta_2 \cdot J_2^*$$
-where $$J_1^*$$ is total power loss and $$J_2^*$$ is VDI.
+$$J^* = \beta_1 \cdot J_1^ + \beta_2 \cdot J_2^$$
+where $$J_1^$$ is total power loss and $$J_2^$$ is VDI.
 
 ### 2.5 Optimization Algorithms
 Three optimization techniques are compared:
