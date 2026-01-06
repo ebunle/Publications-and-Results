@@ -2,8 +2,6 @@
 
 **Authors:**  
 Ebunle Akupan René¹, Willy Stephen Tounsi Fokui²  
-¹University of Buea, Cameroon  
-²Teleconnect GmbH, Germany  
 
 **Corresponding Author:** ebunleakupanrene@gmail.com  
 
@@ -86,17 +84,7 @@ The hybrid GA–PSO approach demonstrated superior performance in optimizing EVC
 ---
 
 ## 5. Abbreviations
-- **BFOA–PSO:** Bacterial Foraging Optimization Algorithm – Particle Swarm Optimization
-- **CP:** Charging Point
-- **CS:** Charging Station
-- **DG:** Distributed Generator
-- **EV:** Electric Vehicle
-- **EVCS:** Electric Vehicle Charging Station
-- **GA:** Genetic Algorithm
-- **PSO:** Particle Swarm Optimization
-- **PV:** Photovoltaic
-- **RDNS:** Radial Distribution Network System
-- **VDI:** Voltage Deviation Index
+
 
 ---
 
