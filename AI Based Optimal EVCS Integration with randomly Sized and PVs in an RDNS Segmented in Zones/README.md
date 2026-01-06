@@ -66,7 +66,7 @@ Three optimization techniques are compared:
 - Four execution cases with randomly sized and placed PV systems were analyzed.
 
 ### 3.2 Voltage Profile Improvement
-- The hybrid GA–PSO achieved the best voltage profile with a minimum node voltage of **0.92214 p.u.**, outperforming GA (0.89494 p.u.) and PSO (0.90792 p.u.).
+- The hybrid GA–PSO achieved the best voltage profile with a minimum node voltage of **0.92214 p.u.**, better than GA (0.89494 p.u.) and PSO (0.90792 p.u.).
 
 ### 3.3 Power Loss Reduction
 - The hybrid GA–PSO yielded the lowest power losses:
