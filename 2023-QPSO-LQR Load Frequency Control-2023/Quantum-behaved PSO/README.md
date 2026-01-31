@@ -95,7 +95,7 @@ The proposed QPSO-LQR-PID controller demonstrates superior performance in load f
 - Minimal steady-state error $$(7 \times 10^{-5}$$ Hz)
 - Reduced overshoot (0.04521 Hz)
 - Faster settling time (< 4 s)
-- Robustness to load changes and parameter uncertainties
+
 
 The hybrid optimization approach effectively combines the strengths of LQR and QPSO, providing a clear and efficient design process compared to conventional methods.
 
